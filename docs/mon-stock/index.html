@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon stock · Gestion personnelle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="stock.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../">Gestion personnelle</a>
+      <h1>Mon stock</h1>
+    </header>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="stock-title">
+        <h2 id="stock-title">Mes aliments</h2>
+        <label for="search">Rechercher par libellé</label>
+        <input id="search" type="search" placeholder="Ex. riz">
+        <div id="locations" class="filters" role="group" aria-label="Filtrer par endroit"></div>
+        <button id="expiring" type="button" aria-pressed="false">Arrive à échéance</button>
+        <p id="count" role="status"></p>
+        <div id="items"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Ajouter un aliment</h2>
+        <form id="stock-form">
+          <label for="name">Libellé</label>
+          <input id="name" required>
+          <label for="quantity">Quantité</label>
+          <input id="quantity" type="number" min="0" step="any" value="1" required>
+          <label for="location">Endroit de stockage</label>
+          <input id="location" list="location-options" autocomplete="off" aria-describedby="location-help" required>
+          <datalist id="location-options"></datalist>
+          <p id="location-help" class="hint">Saisissez un nouvel endroit pour l’ajouter.</p>
+          <label for="start">Date de début (facultative)</label>
+          <input id="start" type="date">
+          <label for="end">Date de fin (facultative)</label>
+          <input id="end" type="date">
+          <div class="actions">
+            <button id="save" class="primary" type="submit">Ajouter</button>
+            <button id="cancel" type="button" hidden>Annuler</button>
+          </div>
+          <p id="feedback" role="status" aria-atomic="true"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
