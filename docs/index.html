@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Le menu des applications de gestion personnelle.">
+  <title>Gestion personnelle</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: #142b27;
+      background: #f1f5ef;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(66rem, calc(100% - 3rem)); margin: 0 auto; }
+    header { padding: clamp(3rem, 10vw, 7rem) 0 2.5rem; }
+    h1 { margin: 0; font-size: clamp(2.25rem, 7vw, 4.75rem); line-height: 1.04; letter-spacing: -.055em; }
+    h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+    .applications { padding-bottom: 4rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .card {
+      display: flex;
+      min-height: 10rem;
+      height: 100%;
+      flex-direction: column;
+      gap: .5rem;
+      padding: 1.5rem;
+      border: 1px solid #c8d7cc;
+      border-radius: 1rem;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+    }
+    a.card:hover { border-color: #28634f; background: #f8fcf8; }
+    a.card:focus-visible { outline: 3px solid #28634f; outline-offset: 3px; }
+    .card strong { font-size: 1.125rem; }
+    .card span { color: #3c5951; line-height: 1.5; }
+    .card .status { margin-top: auto; padding-top: .75rem; font-size: .875rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Gestion personnelle</h1>
+    </header>
+    <section class="applications" aria-labelledby="applications-title">
+      <h2 id="applications-title">Mes applications</h2>
+      <ul class="cards">
+        <!-- Lorsque l’URL est connue, remplacer le div de la carte par un lien a.card et retirer son statut. -->
+        <li>
+          <div class="card">
+            <strong>Budget</strong>
+            <span>Suivre les revenus et les dépenses.</span>
+            <span class="status">À venir</span>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <strong>Documents</strong>
+            <span>Retrouver les documents utiles.</span>
+            <span class="status">À venir</span>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <strong>Organisation</strong>
+            <span>Consulter les tâches et les échéances.</span>
+            <span class="status">À venir</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
